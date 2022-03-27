@@ -24,8 +24,18 @@
 
 import Foundation
 
-protocol LoadableObject: ObservableObject {
+public protocol LoadableObject: ObservableObject {
+
+  // MARK: - Associated Types
   associatedtype Output
+
+
+  // MARK: - Properties
+
   var state: LoadingState<Output> { get }
+
+
+  // MARK: - Methods
+
   func load()
 }
