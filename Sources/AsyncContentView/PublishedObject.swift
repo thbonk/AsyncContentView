@@ -25,7 +25,7 @@
 import Combine
 import Foundation
 
-class PublishedObject<Wrapped: Publisher>: LoadableObject {
+public class PublishedObject<Wrapped: Publisher>: LoadableObject {
 
   // MARK: - Public Properties
 
@@ -48,7 +48,7 @@ class PublishedObject<Wrapped: Publisher>: LoadableObject {
 
   // MARK: - LoadableObject
 
-  func load() {
+  public func load() {
     state = .loading
 
     cancellable = publisher

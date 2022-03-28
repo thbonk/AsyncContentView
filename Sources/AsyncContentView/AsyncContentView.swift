@@ -25,14 +25,14 @@
 import Combine
 import SwiftUI
 
-struct AsyncContentView<Source: LoadableObject, Content: View, ErrorView: View, LoadingView: View>: View {
+public struct AsyncContentView<Source: LoadableObject, Content: View, ErrorView: View, LoadingView: View>: View {
 
   // MARK: - Public Properties
 
   @ObservedObject
   public private(set) var source: Source
 
-  var body: some View {
+  public var body: some View {
     switch source.state {
       case .idle:
         Color.clear.onAppear(perform: source.load)
@@ -66,7 +66,7 @@ struct AsyncContentView<Source: LoadableObject, Content: View, ErrorView: View, 
 }
 
 
-extension AsyncContentView {
+public extension AsyncContentView {
 
   init<P: Publisher>(
     source: P,
