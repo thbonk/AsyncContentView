@@ -25,7 +25,7 @@
 import Combine
 import SwiftUI
 
-public struct AsyncContentView<Source: LoadableObject, Content: View, ErrorView: View, LoadingView: View>: View {
+public struct AsyncContentView<Source: LoadableObject, Content: View, ErrorView: View>: View {
 
   // MARK: - Public Properties
 
